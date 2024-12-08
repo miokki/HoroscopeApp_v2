@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1b3c;
+  color: #e6e6fa;
+}
+
+.astro-circle {
+  transition: all 0.3s ease;
+}
+
+.astro-circle:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.planet-symbol {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.aspect-line {
+  transition: opacity 0.3s ease;
+}
+
+.aspect-line:hover {
+  opacity: 1;
+}

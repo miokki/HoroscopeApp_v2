@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark 
+           text-white font-semibold
+           px-6 py-2 rounded-lg
+           transform transition-all duration-200
+           hover:scale-105 active:scale-95;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --text: #1f2937;
+  --input-text: #1f2937; /* Kolor tekstu dla inputów w trybie jasnym */
+  --input-placeholder: #6b7280;
+  --chart-lines: #1f2937;
+  --chart-background: #ffffff;
+}
+
+[data-theme='dark'] {
+  --background: #0f172a;
+  --text: #f3f4f6;
+  --input-text: #f3f4f6; /* Kolor tekstu dla inputów w trybie ciemnym */
+  --input-placeholder: #9ca3af;
+  --chart-lines: #f3f4f6;
+  --chart-background: #0f172a;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.2s, color 0.2s;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.8);
+}
+
+.glass-morphism {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+}
+
+.input-base {
+  @apply w-full px-4 py-3 rounded-lg 
+         bg-opacity-10 backdrop-blur-lg
+         border border-purple-300/20
+         focus:ring-2 focus:ring-purple-500
+         focus:border-transparent
+         dark:text-white
+         transition duration-200;
+}
+
+/* Animacje */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Container styles */
+.form-container {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsywność */
+@media (max-width: 640px) {
+  .form-container {
+    @apply p-4;
+  }
+}
+
+/* Dodatkowe style dla wykresu */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.planet-symbol {
+  user-select: none;
+}
+
+.aspect-line {
+  pointer-events: none;
+}
+
+.zodiac-text {
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+}
+
+/* Style dla tooltipów */
+.tooltip {
+  position: absolute;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Dodaj style dla inputów */
+input, textarea, select {
+  color: var(--input-text);
+  background-color: var(--background);
+  border: 1px solid currentColor;
+}
+
+/* Dodaj style dla placeholderów */
+input::placeholder, 
+textarea::placeholder {
+  color: var(--input-placeholder);
+  opacity: 0.7;
+}

@@ -1,0 +1,8 @@
+Flask==3.1.0
+flask_cors
+pyswisseph
+swisseph
+geopy==2.4.0
+pytz==2023.3
+gunicorn==21.0.0
+python-dotenv==1.0.0
